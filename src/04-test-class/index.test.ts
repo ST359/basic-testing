@@ -49,7 +49,7 @@ describe('BankAccount', () => {
   test('fetchBalance should return number in case if request did not failed', async () => {
     const acc = getBankAccount(5);
     jest.spyOn(acc, 'fetchBalance').mockImplementation(async () => {
-      const balance = random(0,100,false);
+      const balance = random(0, 100, false);
       const requestFailed = false;
       return requestFailed ? null : balance;
     });
@@ -70,8 +70,10 @@ describe('BankAccount', () => {
   test('should throw SynchronizationFailedError if fetchBalance returned null', async () => {
     const acc = getBankAccount(0);
     jest.spyOn(acc, 'fetchBalance').mockImplementation(async () => {
-      return null
+      return null;
     });
-    expect(acc.synchronizeBalance()).rejects.toThrow(SynchronizationFailedError);
+    expect(acc.synchronizeBalance()).rejects.toThrow(
+      SynchronizationFailedError,
+    );
   });
 });

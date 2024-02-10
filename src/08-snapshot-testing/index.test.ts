@@ -6,14 +6,14 @@ describe('generateLinkedList', () => {
   test('should generate linked list from values 1', () => {
     const result = generateLinkedList(['head', 'tail']);
     expect(result).toStrictEqual({
-      "next": {
-        "next": {
-          "next": null,
-          "value": null,
+      next: {
+        next: {
+          next: null,
+          value: null,
         },
-        "value": "tail",
+        value: 'tail',
       },
-      "value": "head",
+      value: 'head',
     });
   });
 
